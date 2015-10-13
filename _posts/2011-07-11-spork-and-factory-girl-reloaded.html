@@ -1,0 +1,16 @@
+---
+---
+<h1>{{page.title}}</h1>
+
+<p>
+  Today I ran across an issue where when running Spork and autotest the 
+  factories that I added were not being reloaded. After some Googling I found 
+  a simple solution which requires just two lines in the Spork.each_run block. 
+  It looks like so
+
+  <script src="https://gist.github.com/1083159.js?file=spec_helper.rb"></script>
+
+  reload_routes! and Factory.factories.clear do exactly what they say. The 
+  Dir.glob reads all my factories out of the factories folder and loads each 
+  on every run. Simple and to the point!
+</p>

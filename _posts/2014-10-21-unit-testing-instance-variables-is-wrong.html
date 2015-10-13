@@ -1,0 +1,31 @@
+---
+---
+<h1>{{page.title}}</h1>
+
+<p>
+  I ran into some code today that was testing that instance variables were getting set.  It looked something along these lines.
+
+  <script src="https://gist.github.com/adam-e-trepanier/a7accd015b2e74830980.js"></script>
+
+  There are a number of problems with this bit of tests.
+</p>
+
+<p>
+  First off we immediately have broken information hiding.  We are reaching into the internal details of the object and leaking its implementation details out into the wild.  This test is going to fail the minute I do a refactor and rename @logger to something else; the same goes for @agent.
+</p>
+
+<p>
+  Its really easy to verify that the instance variables are getting set thru the class's public API.  Heck if they are not getting set and the tests still pass guess what, they are probably not needed.  If they are an essential part of the object when under test these will need to be set and used so the class can do its job.  Therefore you have to initialize them by default, whats the point of the test?
+</p>
+
+<p>
+  These two tests in my opinion are technical debt just waiting to rear its ugly head.  The minute you go and refactor the logging mechanism or agent mechanism you run the risk of breaking these test for no good reason.  Not only that, these two additional tests are just adding noise to the other tests that are valuable.
+</p>
+
+<p>
+  Most of this also applies to private methods also.  If you run into lots of private methods with a bunch of logic, it might be trying to tell you something.  Maybe theres another class trying to sneak out.
+</p>
+
+<p>
+  To close out, most often testing instance variables does not have a very large benefit.  If you stick to testing the public interface your internal details are being tested thoroughly.
+</p>

@@ -1,0 +1,42 @@
+---
+---
+<h1>{{page.title}}</h1>
+
+<p>
+  I have been diving into the functional language Clojure recently and I 
+  could not quite remember how to destructure maps. The syntax kept giving me 
+  fits so I started down long testing session and wanted to share my finding.
+</p>
+
+<p>
+  First lets load up some data to use as test data.  We will use this for the rest of the examples.
+
+  <script src="https://gist.github.com/adam-e-trepanier/03c3e0ca92d822534ff3.js"></script>
+</p>
+
+<p>
+  My first run at breaking this data apart was to use the keys directive for each map that the data contained.  It ended up like this.
+
+  <script src="https://gist.github.com/adam-e-trepanier/47866b5d0a8045d87561.js"></script>
+
+  You can also see the :as directive which if you execute the gist and view the output it simply maintains the whole structure that was passed in.
+</p>
+
+<p>
+  The next phase came after reading the <a href="http://clojure.org/special_forms#Special%20Forms--Binding%20Forms%20(Destructuring)-Map%20binding%20destructuring">Clojure documentation</a> about special forms in destructing maps.
+</p>
+
+<p>
+  Following some of that advice it became
+
+  <script src="https://gist.github.com/adam-e-trepanier/cac11fa98ac4d1422735.js"></script>
+</p>
+
+<p>
+  Notice that we can prefixed map keys as of Clojure 1.6.
+  <br />
+  Finally you can also use auto resolved keywords in Clojure 1.6.  I personally like the prefixed map keys compared to the auto resolved just because it gives a tad more context.
+
+  <script src="https://gist.github.com/adam-e-trepanier/2383227e043d93c68923.js"></script>
+</p>
+

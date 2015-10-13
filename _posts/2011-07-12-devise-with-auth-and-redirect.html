@@ -1,0 +1,16 @@
+---
+---
+<h1>{{page.title}}</h1>
+
+<p>
+  While working with a new rails project for my current employer I hooked up 
+  Devise for authentication.  I wanted all redirects to for authenticate_user! 
+  to be sent to /login.  Getting this to work was relatively easy and here is 
+  the files I had to edit.
+
+  <script src="https://gist.github.com/1070145.js?file=application.rb"></script>
+  <script src="https://gist.github.com/1070145.js?file=custom_failure_authentication.rb"></script>
+  <script src="https://gist.github.com/1070145.js?file=devise.rb"></script>
+
+  This was all I need to do to get the redirects working.
+</p>

@@ -1,0 +1,31 @@
+---
+---
+<h1>{{page.title}}</h1>
+
+<p>
+  Headers, Headers Headers!! I have tested controller calls numerous times 
+  when trying to verify that the json response is coming back correct.  
+  However I always forget what to set the headers too.  I always know its 
+  something to do with the request object, but never remember what to enter 
+  to make the format.js cal to fire correctly.
+</p>
+
+<p>
+  <b>request.env['HTTP_ACCEPT'] = 'application/json, text/javascript, *'</b>
+</p>
+
+<p>
+  This tells rails that, "hey I am expecting you to return json or javascript".
+</p>
+
+<p>
+  <b>request.env['CONTENT_TYPE'] = 'application/json'</b>
+</p>
+
+<p>
+  So my code ended up looking like so:
+
+  <script src="https://gist.github.com/1482740.js?file=spec_helper.rb"></script>
+
+  in the spec helper
+</p>

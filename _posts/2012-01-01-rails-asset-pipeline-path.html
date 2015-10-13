@@ -1,0 +1,14 @@
+---
+---
+<h1>{{page.title}}</h1>
+
+<p>
+  I just ran into a little issue while fooling around with rails and 
+  backbone.js.  I wanted to start using haml_coffee_assets for templates and 
+  added the directory app/assets/templates.  When refreshing the page to try 
+  and get ahold of the template I was getting an error 
+  <b>Sprockets::FileOutsidePaths</b>.  Turns out I needed to restart WEBrick 
+  in order for the assets path to be "reloaded"
+</p>
+
+<p>Just a quick gotcha!</p>

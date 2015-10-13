@@ -1,0 +1,27 @@
+---
+---
+<h1>{{page.title}}</h1>
+
+<p>Another issue arose tonight where launchy was screaming at me about Capybara save_and_open_page method using an old API.
+
+  <pre>
+  WARNING: You made a call to a deprecated Launchy API. This call should be changed to 'Launchy.open( uri )'
+  </pre>
+
+  To fix this I simply updated my gem file to include what version of launchy I was using like so:
+</p>
+
+<p>
+  <b>gem 'launchy', '0.4.0'</b>
+</p>
+<p>
+  Next update bundler from the command prompt
+</p>
+
+<p>
+  <b>bundle update launchy</b>
+</p>
+
+<p>
+  Bingo, I'm seeing pages again...
+</p>

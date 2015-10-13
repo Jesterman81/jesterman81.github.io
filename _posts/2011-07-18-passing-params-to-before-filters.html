@@ -1,0 +1,24 @@
+---
+---
+<h1>{{page.title}}</h1>
+
+<p>
+  Ran across something I never did today.  I needed to pass in a param which 
+  changed based on whether the route was nested or not.  So I could have 
+  something like <i>/foo/1</i> and <i>/foo/1/bar/2</i>. 
+</p>
+
+<p>
+  I am really after what the first number after <i>foo</i> is so I can verify 
+  something in my before filter.  In the first example <i>/foo/<b>1</b></i> 
+  the param being passed to the controller is :id.  In the second example 
+  <i>/foo/<b>1</b>/bar/2</i> the param is :foo_id.
+</p>
+
+<p>
+  After some digging I found the info I was looking for on the Rails Guides and came up up with this:
+
+  <script src="https://gist.github.com/1094239.js?file=some_controller.rb"></script>
+
+  All my cucumber and rspec tests are green and I feel good!
+</p>

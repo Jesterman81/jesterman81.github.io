@@ -1,0 +1,11 @@
+---
+---
+<h1>{{page.title}}</h1>
+
+<h4>Quick little tip on method and instance names in the Rails source.</h4>
+
+<p>
+  I noticed a few methods with the underscore character prepended to them and some instance variables with the same convention.  After doing some digging over the internets it appears the rails source uses this naming convention as a call out that these are internal and should not be called by public consumers.
+
+  In one particular place is the OrderedOptions class in ActiveSupport.  If you checkout the _get method you'll see what I mean.
+</p>
