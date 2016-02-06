@@ -1,3 +1,11 @@
 defaults:
-  timezone: America/Chicago
-  encoding: utf-8
+  scope:
+    path: ""
+    type: "posts"
+  values:
+    layout: "default"
+  timezone: "America/Chicago"
+  encoding: "utf-8"
+  sass:
+    sass_dir: "_sass"
+    style: "compressed"
